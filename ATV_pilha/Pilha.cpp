@@ -29,8 +29,7 @@ class pilha_int{
 		}
 			
 		~pilha_int(){
-			delete buffer;
-			delete top;
+			free(buffer);
 		}
 		
 		int get_tam(){
@@ -90,12 +89,12 @@ class pilha_int{
 int main(void){
 	pilha_int pile3(250);
 	cout << "Tamanho pile3: " << pile3.get_tam() << endl;
-	//pile3.~pilha_int(); /*o código é interrompido ao ser executado a função delete*/
+	pile3.~pilha_int();
 		
 	
 	pilha_int pile2(-10);
 	cout << "\nTamanho pile2: " << pile2.get_tam() << endl;
-	//pile2.~pilha_int();
+	pile2.~pilha_int();
 	
 	pilha_int pile1(6);
 	
