@@ -48,7 +48,6 @@ int main(){
 	stud_ptr2->print_data();
 
 	delete stud_ptr2;
-
 	
 	return 1;
 }

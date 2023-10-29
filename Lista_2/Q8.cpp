@@ -5,11 +5,11 @@
 using namespace std;
 
 int main(){
-	string str_holder, str_1 = "cacatua", str_2;
+	string str_holder, str_1 = "caro", str_2;
 	str_2 = str_1;
 	int half_ind, str_size = str_1.size();
 	
-	(str_size % 2) == 0 ? half_ind = str_size/2 : half_ind = (str_size-1)/2;
+	(str_size % 2) == 0 ? half_ind = str_size/2 : half_ind = (str_size+1)/2;
 	cout << "\nTamnho string: " << str_size << " metade: " << half_ind << endl;
 
 	str_holder = str_1.substr(half_ind, str_size);

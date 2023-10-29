@@ -16,7 +16,7 @@ int main(){
 	while(true){
 		cout << "\nentre com a posicao para inserir a string 2: ";
 		cin >> pos;
-		if(pos <= str_1.size()) break;
+		if(pos <= str_1.size() && pos >= 0) break;
 		else cout << "\n\nescolha uma posicao menor que o tamanho de str_1!\n\n";
 	}
 

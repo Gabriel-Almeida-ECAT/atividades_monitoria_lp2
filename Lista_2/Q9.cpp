@@ -3,6 +3,7 @@
 using namespace std;
 
 void print_count_down(int num){
+	if(num < 0) num *= -1;
 	if(num==1) cout << num;
 	else{
 		cout << num << " ";
@@ -11,7 +12,7 @@ void print_count_down(int num){
 }
 
 int main(){
-	int num = 50;
+	int num = -5;
 
 	print_count_down(num);	
 

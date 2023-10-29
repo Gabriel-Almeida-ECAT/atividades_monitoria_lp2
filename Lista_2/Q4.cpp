@@ -6,6 +6,7 @@ class conta{
 		float saldo;
 		
 		conta(){saldo = 0;}
+		
 		void extrato(){
 			printf("\nSaldo da conta: %.2f\n", saldo);
 		}

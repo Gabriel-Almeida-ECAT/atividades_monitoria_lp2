@@ -11,6 +11,7 @@ class Node {
         bool n_found;
 
         Node(){ next = nullptr; swap = false; removed = false; n_found = false; }; // construtor para criar uma lista vazia      
+        
         // insere um objeto na lista, obtendo um novo nó, inserindo n em data e conectando o novo nó ao nodo antecessor. O primeiro nó da lista deve apontar para NULL(fim da lista).
         void insert(int n){
             if(next == nullptr){
@@ -31,10 +32,8 @@ class Node {
                 next->removed = true;
                 swap = false;
                 next->swap = true;
-                if(n_found){
-                    next->n_found = true;
-                    n_found = false;
-                }
+                next->n_found = true;
+                n_found = false;
             }
    
             if(data == n && next->next != nullptr){
@@ -101,15 +100,17 @@ int main(){
 
     N.insert(10);
     N.insert(20);
-    N.insert(30);
     N.insert(20);
+    N.insert(20);
+    N.insert(20);
+    N.insert(45);
 
     N.display();
 
     if (N.isEmpty()) cout << "\nlista vazia" << endl;
     else  cout << "\nlista nao vazia" << endl;  
 
-    if (N.remove(20)) cout << "\nRemovido" << endl;
+    if (N.remove(45)) cout << "\nRemovido" << endl;
     else  cout << "\nNão removido" << endl;  
 
     N.display();
