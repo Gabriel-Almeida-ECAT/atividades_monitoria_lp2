@@ -46,17 +46,14 @@ int main(){
 	
 	/*Letra E*/
 	cout << "\n| Letra E |\n";
-	int *ptr1, *ptr2, *ptr3;
-	int holder;
+	int *ptr1, holder;
 	
 	cout << "numero1 =: " << numero1 << " | numero2 =: " << numero2;
-	ptr1 = &numero1;
-	ptr2 = &numero2;
-	ptr3 = &holder;
 	
-	*ptr3 = *ptr1;
-	*ptr1 = *ptr2;
-	*ptr2 = *ptr3;
+	ptr1 = &holder;
+	*ptr1 = numero1;
+	numero1	= numero2;
+	numero2 = *ptr1;
 	
 	cout << "\nnumero1 =: " << numero1 << " | numero2 =: " << numero2;
 	
