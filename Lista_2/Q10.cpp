@@ -7,10 +7,8 @@ class Node {
         int data;    // dado armazenado neste nó da lista
         Node *next;  // ponteiro para antecessor da lista
         bool swap;
-        bool removed;
-        bool n_found;
 
-        Node(){ next = nullptr; swap = false; removed = false; n_found = false; }; // construtor para criar uma lista vazia      
+        Node(){ next = nullptr; swap = false; }; // construtor para criar uma lista vazia      
         
         // insere um objeto na lista, obtendo um novo nó, inserindo n em data e conectando o novo nó ao nodo antecessor. O primeiro nó da lista deve apontar para NULL(fim da lista).
         void insert(int n){
@@ -26,39 +24,39 @@ class Node {
         
         // Caso exista na lista o inteiro n, remover o nó correspondente a n. Retornar true se removeu. 
         bool remove(int n){
-            if(swap){
+            if(swap){ //&& next->next != nullptr
+                //printf(" [in swap] ");
                 data = next->data;
-                removed = false;
-                next->removed = true;
                 swap = false;
                 next->swap = true;
-                next->n_found = true;
-                n_found = false;
             }
    
             if(data == n && next->next != nullptr){
-                if(!n_found && !next->n_found){
-                    next->n_found = true;
+                //printf(" \n[data: %d][swap: %d][next swap: %d][in data == n && next->next != nullptr]\n", data, swap, next->swap);
+                if(!next->swap){
                     data = next->data;
                     next->swap = true;
-                    next->removed = true;
                     next->remove(n);
                 }else{
                     next->remove(n);
                 }
             }
-            else if(data == n && next->next == nullptr){
-                this->removeAll();
-            }
             else if(data != n && next->next != nullptr){
+                //printf(" \n[data: %d][swap: %d][next swap: %d][in data != n && next->next != nullptr]\n", data, swap, next->swap);
                 next->remove(n);
             }
-            else if(next->next == nullptr){
+            else if(data == n && next->next == nullptr){
+                //printf(" \n[data: %d][swap: %d][next swap: %d][in data == n && next->next == nullptr]\n", data, swap, next->swap);
                 next->swap = false;
-                bool holder = next->removed;
-                next->removed = false;
                 this->removeAll();
-                return holder;
+                return true;
+            }
+            else if(data != n && next->next == nullptr){
+                //printf(" \n[data: %d][swap: %d][next swap: %d][in data != n && next->next == nullptr]\n", data, swap, next->swap);
+                if(next->swap){
+                    this->removeAll();
+                    return true;
+                }else return false;
             }
         }
         
@@ -100,17 +98,14 @@ int main(){
 
     N.insert(10);
     N.insert(20);
-    N.insert(20);
-    N.insert(20);
-    N.insert(20);
-    N.insert(45);
+    N.insert(30);
 
     N.display();
 
     if (N.isEmpty()) cout << "\nlista vazia" << endl;
     else  cout << "\nlista nao vazia" << endl;  
 
-    if (N.remove(45)) cout << "\nRemovido" << endl;
+    if (N.remove(20)) cout << "\nRemovido" << endl;
     else  cout << "\nNão removido" << endl;  
 
     N.display();
