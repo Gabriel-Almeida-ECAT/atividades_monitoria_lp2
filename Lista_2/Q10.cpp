@@ -54,6 +54,7 @@ class Node {
             else if(data != n && next->next == nullptr){
                 //printf(" \n[data: %d][swap: %d][next swap: %d][in data != n && next->next == nullptr]\n", data, swap, next->swap);
                 if(next->swap){
+                    next->swap = false;
                     this->removeAll();
                     return true;
                 }else return false;
