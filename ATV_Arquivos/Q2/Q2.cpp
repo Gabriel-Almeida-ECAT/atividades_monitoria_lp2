@@ -11,7 +11,6 @@ matriz resultado devem ser impressas na tela */
 
 #include <iostream>
 #include <fstream>
-#include <cstring>
 
 using namespace std;
 
@@ -155,15 +154,3 @@ int main(){
     file.close();
 	return 0;
 }
-
-
-/*
-{1 2 3 4 5 6 7 8 9}
-mat[1][ind2]
-2[ind2]
-
-
-{{1 2 3} {4 5 6} {7 8 9}}
-mat[ind1][ind2]
-{4 5 6}[ind2]
-*/
