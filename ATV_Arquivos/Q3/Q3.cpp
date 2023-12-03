@@ -5,8 +5,8 @@
 using namespace std;
 
 int main(){
-	ifstream arq1("arq11.txt");
-	ifstream arq2("arq21.txt");
+	ifstream arq1("arq1.txt");
+	ifstream arq2("arq2.txt");
 	char str1[80], str2[80];
 	
 	if(!arq1 && !arq2){

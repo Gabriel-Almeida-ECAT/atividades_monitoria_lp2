@@ -4,7 +4,7 @@
 
 using namespace std;
 
- class Aluno{ 
+class Aluno{ 
 	char nome[50]; 
 	float n1;
 	float n2;
@@ -23,8 +23,7 @@ using namespace std;
 };
 
 float Aluno::media(){
-	float med = (n1+n2)/2;
-	return med;
+	return (n1+n2)/2;
 }
  
 void Aluno::print(){
@@ -47,7 +46,6 @@ int main() {
 
 	char nome[50];
 	float nota_1, nota_2;
-	int ind=0;
 
 	while(arq >> nome >> nota_1 >> nota_2){  
 		cout << "\ndados lidos -> nome: " << nome << " | nota1: " << nota_1 << " | nota2: " << nota_2 << endl;
