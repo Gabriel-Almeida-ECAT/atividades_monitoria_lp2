@@ -1,0 +1,9 @@
+﻿aluno1 2.0 5.0
+alunoooo2 3.0 6.0
+aluno3 4.0 8.0
+alunoo4 5.0 7.0
+aluno5 6.0 8.0
+alunooooo6 7.0 2.0
+alunoooooooo7 8.0 8.0
+alunooo8 1.0 4.0
+alunoo9 2.0 8.0
